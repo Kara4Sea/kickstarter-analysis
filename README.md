@@ -24,6 +24,17 @@ Success rates based on goals were highest in the “Less than 1000” and “100
 ![Outcome_vs_Goals](https://user-images.githubusercontent.com/110419577/189217411-96467fed-dd2c-4505-b12b-bada460276fd.png)
 ### Dataset Limitations
 * For Outcomes based on goal, some information is needed to reflect outliers. The total of plays between first most successful ranges (Less than 1000 to 9999) is 889. While the second most successful range per chart (35000 to 44999) has a total amount of 9 plays. Differences in sample sizes make it difficult to predict if the chart is representative of success with goals ranging 35000 to 44999.
-* For Outcomes Based on Launch Date, October is registering with a blank rather than a zero, causing a gap on the line chart. This could benefit from data cleaning.
+* For Outcomes Based on Launch Date, October is registering with a blank rather than a zero, causing a gap on the line chart. This could benefit from data cleaning to replace blank value with zero.
 * Drawing comparisons betweeen Outcomes Based on Goal and Outcomes Based on Launch is difficult as these are not measuring apples to apples. Goals inspects subcategory of plays, while launch date inspects category of theater. 
 ### Additional Tables and Graphs
+## Below are charts that reflect both category of theater and subcategory of plays, across outcomes based on launch date and goals.
+![Play Outcomes Vs Launch Date](https://user-images.githubusercontent.com/110419577/189542690-cd570943-4c3d-49ad-a83c-e50b3e7009d6.png)
+
+![Theater_Outcomes_vs_Launch](https://user-images.githubusercontent.com/110419577/189542696-55d90fae-7860-40b4-927e-d7df5f97170d.png)
+
+![Play Outcomes Vs Goals](https://user-images.githubusercontent.com/110419577/189542760-b7fc0226-d05b-4c1d-a83e-dc9cd781dd83.png)
+
+![Theater Outcomes Vs  Goals](https://user-images.githubusercontent.com/110419577/189542780-623b7ad8-9731-42f1-baa3-72f46216def2.png)
+
+## Below is a box and whisker plot to display Goal vs Pledge and the number of outliers present
+![Play Goal Vs Pledge](https://user-images.githubusercontent.com/110419577/189542823-7b001365-0892-475a-9522-ee5aeec86640.png)
