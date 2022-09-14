@@ -5,9 +5,41 @@ Analysis on Kickstarter data to determine goal success rates
 The purpose of this analysis is to determine how to contribute to more success in a Kickstarter project. Both launch date and funding goals are reviewed to find variables that contribute to the success of reaching fundraising goals. 
 ## Analysis and Challenges
 ### Analysis of Outcomes Based on Launch Date
-I performed analysis by creating a pivot table to examine the success of theater campaigns depending on their launch date. To ensure that the pivot table could be filtered by years, I used `YEARS(S1)` to pull over the year of each launch date into its own column, I then copied this to the below rows. I then created a pivot table using the filters of “Parent Category” and “Years”, assigned the columns of “Outcomes”, rows of “Date Created Conversion”, and values of “Counts of Outcomes”. I filtered column labels to only reflect “successful”, “failed’, and “canceled”. I filtered the parent category for “theater”. Then I created a line chart based off the pivot table.
+I performed analysis by creating a pivot table to examine the success of theater campaigns depending on their launch date. To ensure that the pivot table could be filtered by years, I used `YEARS(S1)` to pull over the year of each launch date into its own column, I then copied this to the below rows. 
+
+![year example](https://user-images.githubusercontent.com/110419577/190268235-f774d511-1290-46f3-806d-d63c1ab51adc.png)
+
+I then created a pivot table using the filters of “Parent Category” and “Years”, assigned the columns of “Outcomes”, rows of “Date Created Conversion”, and values of “Counts of Outcomes”. I filtered column labels to only reflect “successful”, “failed’, and “canceled”. I filtered the parent category for “theater”. 
+
+![pivot table selection](https://user-images.githubusercontent.com/110419577/190268022-8df0973c-4bca-40a3-9ccf-6bd2251908d8.png)
+
+Then I created a line chart based off the pivot table. I did so by selecting "PivotTable Analyze" on the ribbon, selecting "Pivot Chart". An insert chart window popped up and I selected "Line" and pressed OK to add to worksheet.
+
+![pivot chart](https://user-images.githubusercontent.com/110419577/190269103-29c98657-fc31-458a-a471-337d4303668b.png)
+
 ### Analysis of Outcomes Based on Goals
-I created a new sheet and typed in column and row headings as instructed. To determine “Number Successful”, “Number Failed” and “Number Canceled”, I inserted a `=COUNTIF` function. For the first line I used ` =COUNTIFS(Kickstarter!$D:$D, "<1000", Kickstarter!$F:$F, "Successful", Kickstarter!R:R, "plays")` to determine all successful with a goal of “less than 1000”. For all other rows, I expanded to include less than or equal to values. For example, ` =COUNTIFS(Kickstarter!$D:$D, ">=1000", Kickstarter!$F:$F, "Successful",Kickstarter!R:R, "plays", Kickstarter!$D:$D,"<=4999")`. For other columns, I made sure to change “Successful” to “Failed” or “Canceled” as appropriate. I used the `=SUM` function to find the total projects. Then I calculated the percentage successful, failed and canceled. To create the line chart, I highlighted columns “Goal”, “Percentage Successful”, “Percentage Failed” and “Percentage Canceled”. Then I selected line chart from the insert tab.
+I created a new sheet and typed in column and row headings as instructed. To determine “Number Successful”, “Number Failed” and “Number Canceled”, I inserted a `=COUNTIF` function. 
+
+For the first line I used ` =COUNTIFS(Kickstarter!$D:$D, "<1000", Kickstarter!$F:$F, "Successful", Kickstarter!R:R, "plays")` to determine all successful with a goal of “less than 1000”. For all other rows, I expanded to include less than or equal to values. For example, ` =COUNTIFS(Kickstarter!$D:$D, ">=1000", Kickstarter!$F:$F, "Successful",Kickstarter!R:R, "plays", Kickstarter!$D:$D,"<=4999")`. 
+
+![Countifs formula ss](https://user-images.githubusercontent.com/110419577/190265915-10b1d257-4ae7-4254-ba7a-6d5c6d5a56e2.png)
+
+For other columns, I made sure to change “Successful” to “Failed” or “Canceled” as appropriate. 
+
+![counifs failed ss](https://user-images.githubusercontent.com/110419577/190266260-b97bfc07-e804-405e-872e-96ac3b55c0f2.png)
+![counifs canceled ss](https://user-images.githubusercontent.com/110419577/190266461-73b692d6-cd4d-4c9a-ba64-7d0276ca1287.png)
+
+I used the `=SUM` function to find the total projects. 
+
+![sum example](https://user-images.githubusercontent.com/110419577/190267045-ff02af48-05b1-4cf4-bd67-9a3855a7676a.png)
+
+Then I calculated the percentage successful, failed and canceled. By dividing the number sucessful, number failed and number canceled by the total projects for each row.
+
+![percentage calculation](https://user-images.githubusercontent.com/110419577/190267064-2588e3b5-c26b-45f1-8e17-8a6cf18d023c.png)
+
+To create the line chart, I highlighted columns “Goal”, “Percentage Successful”, “Percentage Failed” and “Percentage Canceled”. Then I selected line chart from the insert tab.
+
+![line chart selection](https://user-images.githubusercontent.com/110419577/190267241-9805452e-87a9-46c5-8c85-1d73969d83f8.png)
 
 ### Challenges and Difficulties Encountered
 With the Analysis of Outcomes Based on Launch Date, the challenge I encountered was determining what elements to include in filters, columns, rows and values. I analyzed the example to find the best fit and played around with the formatting until it matched the example given.
@@ -15,7 +47,7 @@ With the Analysis of Outcomes Based on Launch Date, the challenge I encountered 
 With the Analysis of Outcomes Based on Goal, I came across several challenges. I experienced an issue where some on my `=COUNTIFS` functions were pulling an inaccurate result at zero. In problem-solving, I learned I had to go back and insert a dollar sign in front of the row and column indicated for each cell that used a numeric value. When I first created my line chart, I highlighted the full table. The result did not look like the example given. I tried a pivot table chart, and quickly saw that all I had to do was go back to the original table and highlight the “Goal”, “Percentage Successful”, “Percentage Failed” and “Percentage Canceled” columns before prompting to create the chart.
 ## Results
 ### Theater Outcomes by Launch Date Conclusions
-Success rates were highest when theater productions launched in late Spring, especially May and June. Success rates level off in August. Success rates are lowest in December. Though Failure rates follow a similar trend to success rates, their overall percentage is lower, making success more likely. The one month where this is not the case is in December, when success and failure are equally as likely to occur. 0% of theater productions throughout the year were canceled, so this variable does not impact analysis, except to say that chances of cancelation are extremely low, regardless of launch.
+Success rates were highest when theater productions launched in late Spring, especially May and June. Success rates level off in August. Success rates are lowest in December. Though Failure rates follow a similar trend to success rates, their overall percentage is lower, making success more likely. The one month where this is not the case is in December, when success and failure are equally as likely to occur. The number of theater productions canceled was consistently low throughout the year with a slight uptick in January. Meaning chances of cancelation are extremely low, but are somewhat more likely in January.
 
 ![Theater_Outcomes_vs_Launch](https://user-images.githubusercontent.com/110419577/189217280-4a6b6f9e-2e4b-438b-bb4e-811d4a9893f1.png)
 ### Outcomes base on Goals Conclusions
